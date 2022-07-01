@@ -1,0 +1,26 @@
+﻿<Window x:Class="zalicznie_semestralne.MainWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zalicznie_semestralne"
+        mc:Ignorable="d"
+        Title="MainWindow1" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="im" HorizontalAlignment="Left" Height="16" Margin="129,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87" RenderTransformOrigin="2.122,0.806">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.161"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBlock HorizontalAlignment="Left" Margin="54,48,0,0" TextWrapping="Wrap" Text="Imie" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="18,87,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" Width="59"/>
+        <TextBox x:Name="naz" HorizontalAlignment="Left" Height="23" Margin="129,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Click="Dod_Click" Content="Dodaj" HorizontalAlignment="Left" Margin="272,188,0,0" VerticalAlignment="Top" Width="75" />
+
+    </Grid>
+</Window>

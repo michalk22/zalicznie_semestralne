@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="sklep_internetowyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="dostawa">
+          <Key>
+            <PropertyRef Name="Id_dostawy" />
+          </Key>
+          <Property Name="Id_dostawy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sklep" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="nazawa_ulicy" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="cena dostwy do 20km" Type="varchar(max)" Nullable="false" />
+          <Property Name="cena_dostwy_powyzej_20km" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="produkty">
+          <Key>
+            <PropertyRef Name="Id_produkty" />
+          </Key>
+          <Property Name="Id_produkty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="producent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="model" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="cena" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shop">
+          <Key>
+            <PropertyRef Name="Id_shop" />
+          </Key>
+          <Property Name="Id_shop" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa_sklpu" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="miejscowasc" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ulica" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="Id_user" />
+          </Key>
+          <Property Name="Id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="password" Type="nvarchar(max)" />
+          <Property Name="login" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="zamowienie">
+          <Key>
+            <PropertyRef Name="Id_zamowienia" />
+          </Key>
+          <Property Name="Id_zamowienia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dane klijenta " Type="nvarchar(max)" Nullable="false" />
+          <Property Name="sklep" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="nazwa_produktu" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="nazwa_modelu" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="cena" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="sklep_internetowyModelStoreContainer">
+          <EntitySet Name="dostawa" EntityType="Self.dostawa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="produkty" EntityType="Self.produkty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shop" EntityType="Self.shop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="zamowienie" EntityType="Self.zamowienie" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sklep_internetowyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="dostawa">
+          <Key>
+            <PropertyRef Name="Id_dostawy" />
+          </Key>
+          <Property Name="Id_dostawy" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sklep" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nazawa_ulicy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cena_dostwy_do_20km" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cena_dostwy_powyzej_20km" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="produkty">
+          <Key>
+            <PropertyRef Name="Id_produkty" />
+          </Key>
+          <Property Name="Id_produkty" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="producent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cena" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shop">
+          <Key>
+            <PropertyRef Name="Id_shop" />
+          </Key>
+          <Property Name="Id_shop" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa_sklpu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="miejscowasc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ulica" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="Id_user" />
+          </Key>
+          <Property Name="Id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="zamowienie">
+          <Key>
+            <PropertyRef Name="Id_zamowienia" />
+          </Key>
+          <Property Name="Id_zamowienia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dane_klijenta_" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sklep" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nazwa_produktu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nazwa_modelu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="sklep_internetowyEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dostawa" EntityType="Self.dostawa" />
+          <EntitySet Name="produkty" EntityType="Self.produkty" />
+          <EntitySet Name="shop" EntityType="Self.shop" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <EntitySet Name="zamowienie" EntityType="Self.zamowienie" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sklep_internetowyModelStoreContainer" CdmEntityContainer="sklep_internetowyEntities1">
+          <EntitySetMapping Name="dostawa">
+            <EntityTypeMapping TypeName="sklep_internetowyModel.dostawa">
+              <MappingFragment StoreEntitySet="dostawa">
+                <ScalarProperty Name="Id_dostawy" ColumnName="Id_dostawy" />
+                <ScalarProperty Name="sklep" ColumnName="sklep" />
+                <ScalarProperty Name="nazawa_ulicy" ColumnName="nazawa_ulicy" />
+                <ScalarProperty Name="cena_dostwy_do_20km" ColumnName="cena dostwy do 20km" />
+                <ScalarProperty Name="cena_dostwy_powyzej_20km" ColumnName="cena_dostwy_powyzej_20km" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produkty">
+            <EntityTypeMapping TypeName="sklep_internetowyModel.produkty">
+              <MappingFragment StoreEntitySet="produkty">
+                <ScalarProperty Name="Id_produkty" ColumnName="Id_produkty" />
+                <ScalarProperty Name="producent" ColumnName="producent" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="cena" ColumnName="cena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shop">
+            <EntityTypeMapping TypeName="sklep_internetowyModel.shop">
+              <MappingFragment StoreEntitySet="shop">
+                <ScalarProperty Name="Id_shop" ColumnName="Id_shop" />
+                <ScalarProperty Name="nazwa_sklpu" ColumnName="nazwa_sklpu" />
+                <ScalarProperty Name="miejscowasc" ColumnName="miejscowasc" />
+                <ScalarProperty Name="ulica" ColumnName="ulica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="sklep_internetowyModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="login" ColumnName="login" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zamowienie">
+            <EntityTypeMapping TypeName="sklep_internetowyModel.zamowienie">
+              <MappingFragment StoreEntitySet="zamowienie">
+                <ScalarProperty Name="Id_zamowienia" ColumnName="Id_zamowienia" />
+                <ScalarProperty Name="dane_klijenta_" ColumnName="dane klijenta " />
+                <ScalarProperty Name="sklep" ColumnName="sklep" />
+                <ScalarProperty Name="nazwa_produktu" ColumnName="nazwa_produktu" />
+                <ScalarProperty Name="nazwa_modelu" ColumnName="nazwa_modelu" />
+                <ScalarProperty Name="cena" ColumnName="cena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

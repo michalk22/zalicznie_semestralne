@@ -1,0 +1,23 @@
+﻿<Window x:Class="zalicznie_semestralne.wpf1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zalicznie_semestralne"
+        mc:Ignorable="d"
+        Title="wpf1" Height="450" Width="754.676">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="22*"/>
+            <ColumnDefinition Width="725*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="gridusers" Height="207" VerticalAlignment="Top" HorizontalAlignment="Left" Width="338" Margin="377,0,0,0" Grid.Column="2"/>
+        <Button Click="skle_Click" x:Name="skle"  Content="sklep" HorizontalAlignment="Left" Margin="40,231,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2"/>
+        <Button Click="zam_Click" x:Name="zam" Content="zamowienie" HorizontalAlignment="Left" Margin="40,273,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2"/>
+        <Button Click="dost_Click" x:Name="dost" Content="dostawa " HorizontalAlignment="Left" Margin="40,317,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2"/>
+        <Button Click="dodac_Click" Content="dodaj" HorizontalAlignment="Left" Margin="67,91,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2"/>
+        <Button Click="prod_Click" Content="produkty" Grid.Column="2" HorizontalAlignment="Left" Margin="40,360,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
